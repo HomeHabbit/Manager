@@ -1,0 +1,2 @@
+String CoffeeType
+String Power

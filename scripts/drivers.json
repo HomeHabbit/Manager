@@ -2,9 +2,15 @@
 		"_id":"IR_device",
 		"names":["tv","projector","television","screen"],
 		"actions":[{
+				"_id":"IR_set_volume",
+				"names":["set_volume"],
+				"type":"int"
+			},
+			{
 				"_id":"IR_volume",
 				"names":["volume"],
-				"type":"int"
+				"type":"enum",
+				"values":["up","down","little_up","little_down"]
 			},
 			{
 				"_id":"IR_channel",
@@ -12,7 +18,7 @@
 				"type":"int"
 			},
 			{
-				"_id":"IR_Power",
+				"_id":"IR_power",
 				"names":["power"],
 				"type":"enum",
 				"values":["on","off"]

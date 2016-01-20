@@ -1,0 +1,40 @@
+[{
+		"_id":"IR_device",
+		"names":["tv","projector","television","screen"],
+		"actions":[{
+				"_id":"IR_volume",
+				"names":["volume"],
+				"type":"int"
+			},
+			{
+				"_id":"IR_channel",
+				"names":["channel"],
+				"type":"int"
+			},
+			{
+				"_id":"IR_Power",
+				"names":["power"],
+				"type":"enum",
+				"values":["on","off"]
+			}]
+	},
+	{
+		"_id":"chacon_device",
+		"names":["plug","chacon"],
+		"actions":[{
+				"_id":"chacon_switch",
+				"names":["turn", "switch"],
+				"type":"enum",
+				"values":["on", "off"]
+			}]
+	},
+	{
+		"_id":"loan_light",
+		"names":["light","lamp","led"],
+		"actions":[{
+				"_id" : "loan_switch",
+				"names":["turn", "switch", "light"],
+				"type":"enum",
+				"values":["on", "off"]
+			}]
+}]

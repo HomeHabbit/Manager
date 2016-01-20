@@ -1,0 +1,49 @@
+[{
+						"_id":"L1",
+						"name":"light 1",
+						"driver_id":"light",
+						"device_id":"",
+						"location_id":"kitchen"
+					},{
+						"_id":"TV1",
+						"name": "TV1",
+						"driver_id":"IR",
+						"device_id":"",
+						"location_id":"kitchen"
+					},{
+						"_id":"VP1",
+						"name": "projector 1",
+						"driver_id":"IR",
+						"device_id":"",
+						"location_id":"kitchen"
+					},{
+						"_id":"P2",
+						"name":"power 2",
+						"driver_id":"power",
+						"device_id":"17613",
+						"location_id":"kitchen"
+					},{
+						"_id":"L2",
+						"name":"light 2",
+						"driver_id":"light",
+						"device_id":"",
+						"location_id":"bedroom"
+					},{
+						"_id":"L3",
+						"name":"light 3",
+						"driver_id":"light",
+						"device_id":"",
+						"location_id":"bedroom"
+					},{
+						"_id":"P1",
+						"name":"power 1",
+						"driver_id":"power",
+						"device_id":"1",
+						"location_id":"bedroom"
+					},{
+						"_id":"VP2",
+						"name": "projector 2",
+						"driver_id":"IR",
+						"device_id":"",
+						"location_id":"bedroom"
+					}]

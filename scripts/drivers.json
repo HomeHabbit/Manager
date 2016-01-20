@@ -42,7 +42,8 @@
 				"names":["turn", "switch", "light"],
 				"type":"enum",
 				"values":["on", "off","auto"]
-			},
+			}]
+	},
 	{
 		"_id":"scene",
 		"names":["scene","mode","scenario"],

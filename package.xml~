@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>manager</name>
+  <name>homehabit_manager</name>
   <version>0.0.0</version>
   <description>The homehabit_manager package</description>
 

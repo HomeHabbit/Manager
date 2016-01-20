@@ -36,5 +36,14 @@
 				"names":["turn", "switch", "light"],
 				"type":"enum",
 				"values":["on", "off","auto"]
+			},
+	{
+		"_id":"scene",
+		"names":["scene","mode","scenario"],
+		"actions":[{
+				"_id" : "set_scene",
+				"names":["set", "switch", "change"],
+				"type":"enum",
+				"values":["cinema", "night","cooking"]
 			}]
 }]

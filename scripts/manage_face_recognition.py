@@ -3,6 +3,7 @@ import rospy
 import face_recognition.msg
 import homehabit_manager.msg
 import rospy
+import json
 from std_msgs.msg import Int32
 class ManageRecognition:
     LOCATION = "bedroom"
@@ -17,22 +18,29 @@ class ManageRecognition:
     def filtering(self):
         if not self.previous_persons:
             return
-        if self.nb_persons == 0:
-            return
-        if self.nb_persons < self.previous_nb_persons:
-            return
         for person in self.previous_persons:
-            if person in self.persons:
+            if self.find_person(person['name']):
                 continue
+            if person['state'] == 'disappear' and person['time'] >= 10:
+                continue
+            person['state'] = 'disappear'
+            person['time'] += 1
             self.persons.append(person)
 
-
+    def find_person(self, name):
+        for person in self.persons:
+            if person['name'] == name:
+                return True
+        return False
 
     def update(self, event):
         i = 0
         self.filtering()
         for person in self.persons:
-            self.pub.publish(homehabit_manager.msg.GeneralPurposeCmd(Person=person, Instruction="[]", Location=self.default_location, Type="user", Date=rospy.Time.now()))
+            instances = [{
+                'action': person['state']
+            }]
+            self.pub.publish(homehabit_manager.msg.GeneralPurposeCmd(Person=person['name'], Instruction=json.dumps(instances), Location=self.default_location, Type="user", Date=rospy.Time.now()))
             i += 1
         nb_persons_remaining = self.nb_persons - i
         for x in range(0, nb_persons_remaining):
@@ -46,7 +54,13 @@ class ManageRecognition:
         feedback = data.feedback
         if len(feedback.names) > self.nb_persons:
             self.nb_persons = len(feedback.names)
-        self.persons = feedback.names
+
+        for name in feedback.names:
+            self.persons.append({
+                'name': name,
+                'state': 'appear',
+                'time': 0
+            })
 
     def get_nb_faces(self, data):
         if data.data > self.nb_persons:
@@ -63,7 +77,6 @@ def listen():
     rospy.Subscriber("/person_detection/nb_faces", Int32, manageRecognition.get_nb_faces)
     rospy.Subscriber("/person_detection/nb_pedestrians", Int32, manageRecognition.get_nb_pedestrians)
 
-    s = sched.scheduler(time.time, time.sleep)
     rospy.Timer(rospy.Duration(1), manageRecognition.update)
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()

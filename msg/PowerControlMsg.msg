@@ -1,3 +1,3 @@
-String 	State
-Uint8	Dimming
-String	Id
+string State
+uint8 Dimming
+string Id

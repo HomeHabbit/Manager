@@ -1,2 +1,2 @@
-String 	Cmd
-String	Id
+string Cmd
+string Id

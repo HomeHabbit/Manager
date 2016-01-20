@@ -1,2 +1,2 @@
-String CoffeeType
-String Power
+string CoffeeType
+string Power

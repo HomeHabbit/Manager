@@ -1,0 +1,6 @@
+requests
+dialog-watson-client
+lxml>=3.5.0
+tts-watson
+stt-watson
+anyconfig

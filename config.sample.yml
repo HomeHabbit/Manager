@@ -1,0 +1,17 @@
+watson-dialog:
+  password: password_dialog_watson
+  url: 'https://gateway.watsonplatform.net/dialog/api'
+  user: user_dialog_watson
+watson-stt:
+  audio-chunk: 8000
+  audio-rate: 44100
+  channels: 1
+  model: en-US_BroadbandModel
+  password: password_stt_watson
+  tokenauth: ~
+  user: user_stt_watson
+watson-tts:
+  password: password_tts_watson
+  url: 'https://stream.watsonplatform.net/text-to-speech/api'
+  user: user_tts_watson
+  voice: en-US_AllisonVoice

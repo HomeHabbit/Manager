@@ -1,4 +1,4 @@
-String 	State
-bool	LowWater
-bool	FullTrash
-bool	EmptyMagazine
+string State
+bool LowWater
+bool FullTrash
+bool EmptyMagazine

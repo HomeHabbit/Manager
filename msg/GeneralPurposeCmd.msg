@@ -1,4 +1,5 @@
-String	Person
-String	Instruction
-String	Location
-Time	Date
+string Person
+string Instruction
+string Location
+string Type
+time Date

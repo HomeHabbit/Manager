@@ -29,12 +29,12 @@
 			}]
 	},
 	{
-		"_id":"loan_light",
+		"_id":"lon_light",
 		"names":["light","lamp","led"],
 		"actions":[{
 				"_id" : "loan_switch",
 				"names":["turn", "switch", "light"],
 				"type":"enum",
-				"values":["on", "off"]
+				"values":["on", "off","auto"]
 			}]
 }]

@@ -40,11 +40,11 @@ class ManageRecognition:
             instances = [{
                 'action': person['state']
             }]
-            self.pub.publish(homehabit_manager.msg.GeneralPurposeCmd(Person=person['name'], Instruction=json.dumps(instances), Location=self.default_location, Type="user", Date=rospy.Time.now()))
+            self.pub.publish(homehabit_manager.msg.GeneralPurposeCmd(Person=person['name'], Instruction=json.dumps(instances), Location=self.default_location, Type="detection", Date=rospy.Time.now()))
             i += 1
         nb_persons_remaining = self.nb_persons - i
         for x in range(0, nb_persons_remaining):
-            self.pub.publish(homehabit_manager.msg.GeneralPurposeCmd(Person="anonymous", Instruction="[]", Location=self.default_location, Type="user", Date=rospy.Time.now()))
+            self.pub.publish(homehabit_manager.msg.GeneralPurposeCmd(Person="anonymous", Instruction="[]", Location=self.default_location, Type="detection", Date=rospy.Time.now()))
         self.previous_persons = self.persons
         self.previous_nb_persons = self.nb_persons
         self.nb_persons = 0

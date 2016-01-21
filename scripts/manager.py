@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 import rospy
+from pymongo import MongoClient
 from std_msgs.msg import String
+from homehabit_manager.msg import GeneralPurposeCmd
+
 
 def generalPurpose_callback(data):
 	rospy.loginfo("Msg Received")

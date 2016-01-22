@@ -32,7 +32,7 @@ class HomeHabbitListener(SttWatsonAbstractListener):
         actionValue = ""
         if "place" in dataReceive:
             place = dataReceive['place']
-        if "actionValue" in dataReceive
+        if "actionValue" in dataReceive:
             actionValue = dataReceive["actionValue"]
 
         instructions = None

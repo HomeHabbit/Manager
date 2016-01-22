@@ -10,8 +10,8 @@ from homehabbit_dialog.HomeHabbitListener import HomeHabbitListener
 
 
 def main():
-	script_dir = os.path.dirname(os.path.realpath(__file__))
-    conf = anyconfig.load(script_dir + "/../config.yml"))
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    conf = anyconfig.load(script_dir + "/../config.yml")
     bconf = bunch.bunchify(conf)
     print bconf['watson-dialog'].user
     watsonDialogClient = Client(bconf['watson-dialog'].user, bconf['watson-dialog'].password, script_dir + "/../homehabbit.xml",

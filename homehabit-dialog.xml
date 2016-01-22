@@ -1720,7 +1720,7 @@
             </value>
         </entity>
         <entity name="Device">
-            <value name="Light" value="Light">
+            <value name="Light" value="lon_ligh">
                 <grammar>
                     <item>Light</item>
                     <item>Lights</item>
@@ -1733,13 +1733,13 @@
                     <item>Coffee</item>
                 </grammar>
             </value>
-            <value name="Projector" value="Projector">
+            <value name="Projector" value="VP1">
                 <grammar>
                     <item>projector</item>
                     <item>jector</item>
                 </grammar>
             </value>
-            <value name="Tv" value="Tv">
+            <value name="Tv" value="IR_device">
                 <grammar>
                     <item>television</item>
                     <item>tv</item>

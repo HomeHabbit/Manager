@@ -51,6 +51,11 @@ class HomeHabbitListener(SttWatsonAbstractListener):
                 Type="user", 
                 Date=rospy.Time.now()
             ))
+            self.watsonDialogClient.get_profile().set_data_value('place', '')
+            self.watsonDialogClient.get_profile().set_data_value('actionValue', '')
+            self.watsonDialogClient.get_profile().set_data_value('action', '')
+            self.watsonDialogClient.get_profile().set_data_value('device', '')
+            self.watsonDialogClient.update_profile()
         self.watsonTts.play(resp.response)
         self.lock = False
 
